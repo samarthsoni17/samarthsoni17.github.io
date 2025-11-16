@@ -1,62 +1,537 @@
-/* Cascading stylesheet for the website */
+/* =====================================================
+   MASTER STYLESHEET FOR SAMARTH SONI'S PORTFOLIO
+   =====================================================
+   This stylesheet controls all visual styling across the website;
+   Uses modern CSS3 features for responsive, professional design
+*/
 
-/* Text inside these asterisks and slashes are comments for human */
+/* =====================================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ===================================================== */
+:root {
+  /* PRIMARY COLOR PALETTE - Blue theme for professional tech portfolio; Creates cohesive brand identity */
+  --primary-color: #075AAB; /* Main brand blue; Used for headings, links, and primary elements */
+  --primary-dark: #054080; /* Darker blue for hover states; Provides visual feedback on interaction */
+  --primary-light: #3A7BC8; /* Lighter blue for accents; Creates depth and visual hierarchy */
+
+  /* NEUTRAL COLORS - Provides flexibility for text and backgrounds; Ensures readability */
+  --background-color: #FAFAFA; /* Off-white background; Reduces eye strain compared to pure white */
+  --text-color: #2C3E50; /* Dark blue-gray for body text; Maintains readability with sufficient contrast */
+  --text-light: #6C757D; /* Lighter gray for secondary text; Used for metadata and less important info */
+
+  /* ACCENT COLORS - Adds visual interest and draws attention to interactive elements */
+  --accent-color: #E74C3C; /* Red for hover states and important CTAs; Creates urgency and focus */
+  --success-color: #27AE60; /* Green for success states; Provides positive feedback */
+  --card-background: #FFFFFF; /* Pure white for card elements; Creates elevation effect against background */
+
+  /* SPACING SYSTEM - Consistent spacing creates visual rhythm and professional appearance */
+  --spacing-xs: 0.5rem;  /* 8px - Used for tight spacing like icon gaps */
+  --spacing-sm: 1rem;    /* 16px - Used for element padding and small gaps */
+  --spacing-md: 1.5rem;  /* 24px - Used for section padding and medium gaps */
+  --spacing-lg: 2.5rem;  /* 40px - Used for section margins and large gaps */
+  --spacing-xl: 4rem;    /* 64px - Used for major section separation */
+
+  /* TYPOGRAPHY SCALE - Based on modular scale for harmonious sizing */
+  --font-size-small: 0.875rem;   /* 14px - Used for metadata and captions */
+  --font-size-base: 1rem;        /* 16px - Base font size for body text */
+  --font-size-medium: 1.125rem;  /* 18px - Used for lead paragraphs */
+  --font-size-large: 1.5rem;     /* 24px - Used for h3 headings */
+  --font-size-xlarge: 2rem;      /* 32px - Used for h2 headings */
+  --font-size-xxlarge: 2.5rem;   /* 40px - Used for h1 headings */
+
+  /* DESIGN TOKENS - Reusable values for consistent design elements */
+  --border-radius: 12px;         /* Rounded corners for modern look; Used on cards and buttons */
+  --border-radius-small: 6px;    /* Subtle rounding for small elements */
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth; Creates card elevation */
+  --box-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover; Provides interactive feedback */
+  --transition-speed: 0.3s;      /* Standard animation duration; Fast enough to feel responsive */
+  --max-width: 1200px;           /* Maximum content width; Prevents lines from being too long on large screens */
+}
+
+/* =====================================================
+   RESET AND BASE STYLES
+   ===================================================== */
+* {
+  margin: 0; /* Remove default browser margins; Gives us full control over spacing */
+  padding: 0; /* Remove default browser padding; Ensures consistent spacing across browsers */
+  box-sizing: border-box; /* Include padding and border in element width; Simplifies layout calculations */
+}
+
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling for anchor links; Creates polished navigation experience */
+  font-size: 16px; /* Base font size; All rem units are relative to this */
+}
+
+body {
+  background-color: var(--background-color); /* Light background; Reduces eye strain and provides contrast for content cards */
+  color: var(--text-color); /* Dark text on light background; Ensures WCAG AA accessibility compliance */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* System font stack; Provides native look on each platform and fast loading */
+  font-size: var(--font-size-base); /* Base font size; Ensures readable text on all devices */
+  line-height: 1.6; /* Comfortable line spacing; Improves readability for multi-line paragraphs */
+  text-align: center; /* Center-align text by default; Creates balanced, portfolio-style layout */
+  overflow-x: hidden; /* Prevent horizontal scroll; Ensures clean layout on all screen sizes */
+}
+
+/* =====================================================
+   TYPOGRAPHY STYLES
+   ===================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Bold headings; Creates strong visual hierarchy */
+  line-height: 1.2; /* Tighter line height for headings; Prevents awkward spacing in multi-line headings */
+  margin-top: var(--spacing-lg); /* Consistent top spacing; Creates breathing room between sections */
+  margin-bottom: var(--spacing-md); /* Bottom spacing for separation; Connects heading to its content */
+}
+
+h1 {
+  font-size: var(--font-size-xxlarge); /* Largest heading; Used for page titles and main hero text */
+  color: var(--primary-color); /* Brand color; Reinforces brand identity and creates focal point */
+  margin-top: var(--spacing-xl); /* Extra top spacing; Creates prominent separation for main headings */
+  animation: fadeInDown 0.8s ease-out; /* Entrance animation; Creates engaging first impression */
+}
+
+h2 {
+  font-size: var(--font-size-xlarge); /* Second-level heading; Used for major section titles */
+  color: var(--primary-color); /* Brand color for consistency; Maintains visual hierarchy */
+  margin-top: var(--spacing-xl); /* Section separation; Creates clear content blocks */
+  margin-bottom: var(--spacing-lg); /* Space before content; Visually groups heading with its section */
+  position: relative; /* Enable positioning for decorative elements; Allows for underline effect */
+  display: inline-block; /* Shrink-wrap to content; Makes underline match text width */
+}
+
+h2::after {
+  content: ''; /* Create decorative underline; Adds visual interest and reinforces section breaks */
+  position: absolute; /* Position relative to h2; Allows precise placement */
+  bottom: -10px; /* Place below text; Creates gap between text and underline */
+  left: 50%; /* Start at center; Works with transform for perfect centering */
+  transform: translateX(-50%); /* Center the underline; Ensures visual balance */
+  width: 60px; /* Fixed width; Creates subtle accent rather than full underline */
+  height: 4px; /* Thickness of underline; Makes it prominent but not overwhelming */
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light)); /* Gradient effect; Adds modern, dynamic feel */
+  border-radius: 2px; /* Rounded ends; Softens the geometric shape */
+}
+
+h3 {
+  font-size: var(--font-size-large); /* Third-level heading; Used for subsections and card titles */
+  color: var(--text-color); /* Standard text color; Maintains hierarchy below h2 */
+  margin-top: var(--spacing-lg); /* Top spacing; Separates from previous content */
+  margin-bottom: var(--spacing-xs); /* Minimal bottom spacing; Keeps close to associated content */
+}
+
+h4 {
+  font-size: var(--font-size-medium); /* Fourth-level heading; Used for metadata and subtitles */
+  color: var(--text-light); /* Lighter color; Indicates secondary importance */
+  margin-top: var(--spacing-xs); /* Minimal top spacing; Keeps associated with h3 above */
+  margin-bottom: var(--spacing-sm); /* Small bottom spacing; Separates from content below */
+  font-weight: 500; /* Medium weight; Less emphasis than main headings */
+}
+
+h5 {
+  font-size: var(--font-size-base); /* Base size; Used for minor headings */
+  color: var(--text-color); /* Standard color; Maintains readability */
+  margin-top: var(--spacing-xs); /* Minimal spacing; Keeps tight association */
+}
+
+p {
+  margin-bottom: var(--spacing-sm); /* Paragraph spacing; Creates clear separation between blocks */
+  line-height: 1.8; /* Extra line height for paragraphs; Improves readability for longer text */
+  max-width: 800px; /* Limit line length; Prevents eye strain from tracking long lines */
+  margin-left: auto; /* Center-align paragraphs; Works with margin-right auto */
+  margin-right: auto; /* Center-align paragraphs; Creates balanced layout */
+}
+
+/* =====================================================
+   LINK STYLES
+   ===================================================== */
+a {
+  color: var(--primary-color); /* Brand color for links; Makes them immediately recognizable */
+  text-decoration: none; /* Remove underline; Creates cleaner, modern appearance */
+  transition: all var(--transition-speed) ease; /* Smooth color transitions; Creates polished hover effect */
+  position: relative; /* Enable pseudo-element positioning; Allows for underline animation */
+  display: inline-block; /* Allow transforms; Enables scale and other effects */
+}
+
+a::after {
+  content: ''; /* Create animated underline; Modern alternative to default underline */
+  position: absolute; /* Position relative to link; Allows precise placement */
+  bottom: -2px; /* Place just below text; Creates subtle separation */
+  left: 0; /* Start from left edge; Prepares for width animation */
+  width: 0; /* Start with no width; Will expand on hover */
+  height: 2px; /* Thin underline; Subtle but visible */
+  background-color: var(--accent-color); /* Red underline; Creates visual interest different from link color */
+  transition: width var(--transition-speed) ease; /* Animate width; Creates smooth expansion effect */
+}
+
+a:hover {
+  color: var(--accent-color); /* Red on hover; Provides clear interactive feedback */
+  transform: translateY(-2px); /* Slight upward movement; Creates "lifting" effect */
+}
+
+a:hover::after {
+  width: 100%; /* Expand underline to full width; Completes the animation effect */
+}
+
+a:active {
+  transform: translateY(0); /* Return to original position; Provides click feedback */
+}
+
+/* =====================================================
+   LAYOUT CONTAINERS
+   ===================================================== */
+.container {
+  max-width: var(--max-width); /* Limit content width; Maintains optimal reading line length */
+  margin: 0 auto; /* Center the container; Creates balanced layout on all screen sizes */
+  padding: 0 var(--spacing-md); /* Side padding; Prevents content from touching screen edges */
+}
+
+/* =====================================================
+   NAVIGATION STYLES
+   ===================================================== */
+nav {
+  background-color: var(--card-background); /* White background; Stands out against page background */
+  box-shadow: var(--box-shadow); /* Subtle shadow; Creates elevation effect for fixed nav */
+  padding: var(--spacing-sm) 0; /* Vertical padding; Creates comfortable click targets */
+  position: sticky; /* Stick to top when scrolling; Keeps navigation always accessible */
+  top: 0; /* Stick to very top; Ensures proper positioning */
+  z-index: 1000; /* Above all other content; Prevents content from overlapping nav */
+  animation: slideDown 0.5s ease-out; /* Entrance animation; Creates polished page load */
+}
+
+nav ul {
+  list-style: none; /* Remove bullet points; Creates clean navigation bar */
+  display: flex; /* Horizontal layout; Typical navigation pattern */
+  justify-content: center; /* Center navigation items; Creates balanced appearance */
+  align-items: center; /* Vertical centering; Ensures even alignment */
+  flex-wrap: wrap; /* Allow wrapping on small screens; Maintains usability on mobile */
+  gap: var(--spacing-md); /* Space between nav items; Creates clear separation */
+  margin: 0; /* Remove default margin; Gives full control over spacing */
+  padding: 0; /* Remove default padding; Consistent with list-style removal */
+}
+
+nav a {
+  color: var(--text-color); /* Dark text; Ensures readability against white background */
+  font-weight: 600; /* Semi-bold; Makes navigation items stand out */
+  padding: var(--spacing-xs) var(--spacing-sm); /* Padding for click area; Creates comfortable tap targets */
+  border-radius: var(--border-radius-small); /* Rounded corners; Softens appearance */
+  transition: all var(--transition-speed) ease; /* Smooth transitions; Creates polished interactions */
+}
+
+nav a::after {
+  display: none; /* Disable default link underline; Uses different hover effect for nav */
+}
+
+nav a:hover {
+  background-color: var(--primary-color); /* Blue background on hover; Provides strong visual feedback */
+  color: white; /* White text on blue; Ensures readability and contrast */
+  transform: translateY(-2px); /* Slight lift; Creates interactive feedback */
+  box-shadow: var(--box-shadow); /* Add shadow on hover; Enhances lift effect */
+}
+
+/* =====================================================
+   PROFILE IMAGE STYLES
+   ===================================================== */
+.center-image {
+  display: block; /* Block-level element; Allows margin auto to work */
+  margin: var(--spacing-lg) auto; /* Center horizontally with vertical spacing; Creates focal point */
+  max-width: 100%; /* Responsive sizing; Prevents overflow on small screens */
+  height: auto; /* Maintain aspect ratio; Prevents image distortion */
+  animation: fadeIn 1s ease-out; /* Fade in animation; Creates smooth entrance */
+}
+
+.rounded-circle {
+  border-radius: 50%; /* Perfect circle; Modern profile picture style */
+  border: 6px solid var(--primary-color); /* Blue border; Creates frame effect and brand consistency */
+  box-shadow: var(--box-shadow-hover); /* Prominent shadow; Creates elevation and focus */
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease; /* Animate transforms; Creates interactive feedback */
+  width: 200px; /* Fixed size; Ensures consistency across pages */
+  height: 200px; /* Fixed size; Creates perfect circle */
+  object-fit: cover; /* Crop to fill circle; Maintains aspect ratio while filling space */
+}
+
+.rounded-circle:hover {
+  transform: scale(1.05) rotate(2deg); /* Slight zoom and rotation; Creates playful, engaging interaction */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow; Amplifies elevation effect */
+}
+
+/* =====================================================
+   CARD COMPONENTS
+   ===================================================== */
+.card {
+  background-color: var(--card-background); /* White background; Creates contrast against page background */
+  border-radius: var(--border-radius); /* Rounded corners; Modern, friendly appearance */
+  box-shadow: var(--box-shadow); /* Subtle shadow; Creates elevation and depth */
+  padding: var(--spacing-lg); /* Inner spacing; Creates breathing room for content */
+  margin: var(--spacing-md) auto; /* Vertical spacing and centering; Separates cards */
+  max-width: 900px; /* Limit width; Maintains readability */
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease; /* Animate on hover; Creates interactive feedback */
+  animation: fadeInUp 0.6s ease-out; /* Entrance animation; Creates engaging page load */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift on hover; Creates interactive feedback */
+  box-shadow: var(--box-shadow-hover); /* Enhanced shadow; Amplifies elevation effect */
+}
+
+/* =====================================================
+   LIST STYLES
+   ===================================================== */
+ul {
+  list-style-position: inside; /* Bullets inside content; Prevents bullets from extending beyond container */
+  text-align: left; /* Left-align list text; Improves readability for bullet points */
+  display: inline-block; /* Shrink-wrap to content; Centers the entire list while keeping text left-aligned */
+  margin: var(--spacing-sm) 0; /* Vertical spacing; Separates lists from surrounding content */
+  padding-left: var(--spacing-md); /* Left padding; Creates indent for hierarchical appearance */
+}
+
+li {
+  margin-bottom: var(--spacing-xs); /* Space between items; Improves scannability */
+  line-height: 1.8; /* Comfortable line height; Makes multi-line items readable */
+  color: var(--text-color); /* Standard text color; Maintains consistency */
+}
+
+/* =====================================================
+   SECTION DIVIDERS
+   ===================================================== */
+hr {
+  border: none; /* Remove default border; Gives full control over appearance */
+  height: 2px; /* Thin line; Subtle section separator */
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent); /* Gradient effect; Creates modern, fading divider */
+  margin: var(--spacing-xl) auto; /* Large vertical spacing; Creates clear section breaks */
+  max-width: 200px; /* Limit width; Creates decorative rather than full-width divider */
+  border-radius: 2px; /* Rounded ends; Softens appearance */
+}
+
+/* =====================================================
+   FOOTER STYLES
+   ===================================================== */
+footer {
+  margin-top: var(--spacing-xl); /* Top spacing; Separates from main content */
+  margin-bottom: var(--spacing-lg); /* Bottom spacing; Creates breathing room at page end */
+  padding: var(--spacing-lg) var(--spacing-md); /* Padding for content; Creates comfortable area */
+  background-color: var(--card-background); /* White background; Creates distinction from page */
+  border-top: 3px solid var(--primary-color); /* Blue top border; Adds visual anchor */
+  color: var(--text-light); /* Light gray text; Indicates secondary importance */
+  font-size: var(--font-size-small); /* Smaller text; Appropriate for footer content */
+}
+
+footer code {
+  background-color: var(--background-color); /* Light background; Distinguishes code from text */
+  padding: var(--spacing-xs); /* Small padding; Creates subtle highlight effect */
+  border-radius: var(--border-radius-small); /* Rounded corners; Consistent with design system */
+  font-family: 'Courier New', monospace; /* Monospace font; Standard for code/copyright */
+}
+
+/* =====================================================
+   BUTTON STYLES
+   ===================================================== */
+.btn {
+  display: inline-block; /* Allow padding and margins; Enables button-like behavior */
+  padding: var(--spacing-sm) var(--spacing-lg); /* Comfortable padding; Creates good click target */
+  background-color: var(--primary-color); /* Brand color; Creates visual consistency */
+  color: white; /* White text; Ensures readability on blue background */
+  border-radius: var(--border-radius); /* Rounded corners; Modern button appearance */
+  font-weight: 600; /* Semi-bold text; Makes buttons stand out */
+  text-transform: uppercase; /* Uppercase text; Creates button-like appearance */
+  letter-spacing: 0.5px; /* Slight letter spacing; Improves readability for uppercase */
+  transition: all var(--transition-speed) ease; /* Smooth transitions; Creates polished interactions */
+  box-shadow: var(--box-shadow); /* Subtle shadow; Creates elevation */
+  border: none; /* Remove default border; Gives full control over appearance */
+  cursor: pointer; /* Pointer cursor; Indicates interactivity */
+}
+
+.btn:hover {
+  background-color: var(--primary-dark); /* Darker blue; Provides hover feedback */
+  transform: translateY(-3px); /* Lift effect; Creates interactive feedback */
+  box-shadow: var(--box-shadow-hover); /* Enhanced shadow; Amplifies elevation */
+}
+
+.btn::after {
+  display: none; /* Disable link underline; Buttons have different hover effect */
+}
+
+/* =====================================================
+   SKILL TAGS/BADGES
+   ===================================================== */
+.skill-tag {
+  display: inline-block; /* Allow padding and margins; Creates pill-like appearance */
+  padding: var(--spacing-xs) var(--spacing-sm); /* Compact padding; Creates tight tag appearance */
+  background-color: var(--primary-light); /* Light blue; Creates visual interest */
+  color: white; /* White text; Ensures readability */
+  border-radius: 20px; /* Fully rounded; Creates pill/badge shape */
+  margin: 4px; /* Small margin; Creates gap between tags */
+  font-size: var(--font-size-small); /* Smaller text; Appropriate for badges */
+  font-weight: 500; /* Medium weight; Maintains readability at small size */
+  transition: transform var(--transition-speed) ease; /* Animate on hover; Creates interactive feedback */
+}
+
+.skill-tag:hover {
+  transform: scale(1.1); /* Slight zoom; Creates playful interaction */
+  background-color: var(--primary-color); /* Darker blue; Provides hover feedback */
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start invisible; Creates fade effect */
+  }
+  to {
+    opacity: 1; /* End fully visible; Completes fade in */
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0; /* Start invisible; Creates combined fade and slide */
+    transform: translateY(30px); /* Start below final position; Creates upward slide */
+  }
+  to {
+    opacity: 1; /* End fully visible; Completes fade */
+    transform: translateY(0); /* End at final position; Completes slide */
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0; /* Start invisible; Creates combined fade and slide */
+    transform: translateY(-30px); /* Start above final position; Creates downward slide */
+  }
+  to {
+    opacity: 1; /* End fully visible; Completes fade */
+    transform: translateY(0); /* End at final position; Completes slide */
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%); /* Start above viewport; Creates slide down effect */
+    opacity: 0; /* Start invisible; Combines with slide */
+  }
+  to {
+    transform: translateY(0); /* End at final position; Completes slide */
+    opacity: 1; /* End fully visible; Completes fade */
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1); /* Normal size at start and end; Creates loop */
+  }
+  50% {
+    transform: scale(1.05); /* Slightly larger at midpoint; Creates breathing effect */
+  }
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN - TABLET
+   ===================================================== */
+@media (max-width: 768px) {
+  /* Adjust font sizes for smaller screens; Maintains readability on tablets */
+  :root {
+    --font-size-xxlarge: 2rem;   /* Reduce from 2.5rem; Fits better on smaller screens */
+    --font-size-xlarge: 1.5rem;  /* Reduce from 2rem; Maintains hierarchy */
+    --font-size-large: 1.25rem;  /* Reduce from 1.5rem; Keeps proportional */
+  }
+
+  nav ul {
+    gap: var(--spacing-sm); /* Reduce gap; Fits more items on smaller screens */
+  }
+
+  .rounded-circle {
+    width: 150px; /* Smaller image; Saves space on tablets */
+    height: 150px; /* Maintains circle; Keeps aspect ratio */
+  }
+
+  .card {
+    padding: var(--spacing-md); /* Reduce padding; Maximizes content area */
+  }
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN - MOBILE
+   ===================================================== */
+@media (max-width: 480px) {
+  /* Further reduce sizes for mobile; Optimizes for small screens */
+  :root {
+    --font-size-xxlarge: 1.75rem; /* Further reduction; Prevents text overflow */
+    --font-size-xlarge: 1.25rem;  /* Maintains proportion; Keeps hierarchy */
+    --font-size-large: 1.125rem;  /* Subtle reduction; Maintains readability */
+    --spacing-lg: 2rem;           /* Reduce large spacing; Fits more content */
+    --spacing-xl: 3rem;           /* Reduce extra-large spacing; Maximizes screen use */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack navigation items; Better use of narrow screens */
+    gap: var(--spacing-xs); /* Minimal gap; Compact navigation */
+  }
+
+  .rounded-circle {
+    width: 120px; /* Smaller image for mobile; Saves precious screen space */
+    height: 120px; /* Maintains circle; Keeps aspect ratio */
+  }
+
+  p {
+    max-width: 100%; /* Full width paragraphs; Maximizes screen use */
+  }
+
+  .card {
+    padding: var(--spacing-sm); /* Minimal padding; Maximizes content area */
+    margin: var(--spacing-sm) var(--spacing-xs); /* Reduce margins; Fits screen better */
+  }
+}
+
+/* =====================================================
+   PRINT STYLES
+   ===================================================== */
+@media print {
+  /* Optimize for printing; Creates clean, readable printed pages */
+  body {
+    background-color: white; /* White background; Saves ink */
+    color: black; /* Black text; Ensures maximum readability */
+  }
+
+  nav, footer {
+    display: none; /* Hide navigation and footer; Focuses on content */
+  }
+
+  .card {
+    box-shadow: none; /* Remove shadows; Not needed for print */
+    page-break-inside: avoid; /* Keep cards together; Prevents awkward page breaks */
+  }
 
   a {
-    color: blue;/* set the text color to blue here */
-    text-decoration: none; /* This means we do not want hyperlinks to be underlined */
+    color: black; /* Black links; Ensures readability when printed */
+    text-decoration: underline; /* Underline links; Makes them identifiable in print */
   }
 
-  a:hover {
-    color: red;/* set the text color to red here */
-    text-decoration: none; /* This means we do not want hyperlinks to be underlined */
+  a::after {
+    display: none; /* Remove animated underline; Not relevant for print */
   }
+}
 
-  body {
-    background-color: beige;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-   }
+/* =====================================================
+   ACCESSIBILITY ENHANCEMENTS
+   ===================================================== */
+/* Focus styles for keyboard navigation; Ensures accessibility for keyboard users */
+*:focus {
+  outline: 3px solid var(--primary-color); /* Blue outline; Clearly indicates focus */
+  outline-offset: 2px; /* Gap between element and outline; Prevents overlap with content */
+}
 
-  footer {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+/* Reduce motion for users with vestibular disorders; Respects user preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important; /* Near-instant animations; Effectively disables them */
+    animation-iteration-count: 1 !important; /* Single iteration; Prevents repeating animations */
+    transition-duration: 0.01ms !important; /* Near-instant transitions; Effectively disables them */
   }
+}
 
-  h1 {
-    margin-bottom: 0.5rem;
-    margin-top: 3rem;
-   }
-
-  h2 {
-    color: #075AAB;
-    margin-bottom: 2.5rem;
-    margin-top: 2.5rem;
-   }
-
-  h3 {
-    margin-bottom: 0;
-    margin-top: 2rem;
+/* High contrast mode support; Improves accessibility for visually impaired users */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #0000FF; /* Pure blue; Maximum contrast */
+    --text-color: #000000; /* Pure black; Maximum contrast */
+    --background-color: #FFFFFF; /* Pure white; Maximum contrast */
   }
-
-  h4 {
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
-  }
-
-  h5 {
-    margin-top: 0.5rem;
-  }
-
-  hr {
-    margin-bottom: 3rem;
-    margin-top: 3rem;
-  }
-
-  /* this controls how the bullet points in the resume page looks */
-  ul {
-    display: table;
-    margin: 0 auto;
-    text-align: left;
-  }
+}

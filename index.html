@@ -1,49 +1,242 @@
-<!doctype html>
-
-<!-- this is a comment for human! -->
+<!DOCTYPE html>
+<!-- Document type declaration; Tells browser this is an HTML5 document for proper rendering -->
 
 <html lang="en">
+<!-- Root HTML element with language attribute; Helps screen readers and search engines understand content language -->
 
-  <header>
-      <title> Samarth Soni's Portal </title>
-      <link rel = "stylesheet" href = "css/master.css">
-      <link rel = "FaviconIcon" href = "favicon.ico" type = "image/x-icon">
-      <link rel = "shortcut" href = "favicon.ico" type = "image/x-icon">
-      <meta name = "viewport" content = "width=device-width, initial-scale = 1, shrink-to-fit=no">
-      <meta name = "name" content = "Samarth Soni's Portal">
-      <meta name = "robots" content = "noindex, nofollow">
-  </header>
+<head>
+  <!-- HEAD SECTION: Contains metadata and resources; Not visible to users but critical for functionality -->
 
-  <body>
-<!--  <h3>प्रणाम, Greetings!</h3>-->
-    <img src = "images/Sunlight_pic.jpeg" width = "20%" alt = "banner" class="center-image rounded-circle">
-    <h1> Greetings! Welcome to Samarth Soni's Portal </h1>
-    <h2> About Me </h2>
-    <p style="line-height: 1.3"> I'm a computer science student at <a href="https://www.bits-pilani.ac.in/">BITS Pilani, India</a>. </p>
-    <p> I have experience with Python/Java programming, Machine Learning & Deep Learning, and am interested in the intersection of Artificial Intelligence and social good. </p>
-    <p> A few years down the line, I envision myself working with multi-cultural teams for building Intelligent Systems of the future,
-        <br> which hold the potential to automate every aspect of human life and solve many of the problems our global society faces today. </p>
-    <p> Presently, I am actively pursuing Research and Higher Studies in AI to become conversant with the vast field.  </p>
+  <!-- CHARACTER ENCODING: UTF-8 supports all international characters; Essential for displaying special characters correctly -->
+  <meta charset="UTF-8">
 
-    <h2> Credentials and Portfolio </h2>
+  <!-- VIEWPORT META TAG: Controls responsive behavior on mobile devices; Ensures proper scaling and prevents horizontal scrolling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <p><a href = "resume.html"> My Experience in ML/AI </a> </p>
-    <p>Checkout My: <a href = "https://github.com/samarthsoni17"> GitHub </a> | <a href = "https://www.linkedin.com/in/samarth-soni-3372241ab/"> LinkedIn </a> | <a href = "https://scholar.google.com/citations?user=SlFhnVcAAAAJ&hl=en"> Google Scholar </a> | <a href = "https://www.researchgate.net/profile/Samarth-Soni-2"> ResearchGate </a> </p>
-    <h2> Contact </h2>
+  <!-- PAGE TITLE: Appears in browser tab and search results; Primary identifier for the page -->
+  <title>Samarth Soni's Portfolio | AI & Machine Learning Researcher</title>
 
-    <p> Email: <a href = "mailto: samarthsoni1@gmail.com"> samarthsoni1@gmail.com </a> | <a href = "mailto: f20191274@hyderabad.bits-pilani.ac.in"> f20191274@hyderabad.bits-pilani.ac.in </a> </p>
-    <p> Phone: <a href = "tel:++919969710871"> +91 9969 710 871 </a> </p>
-    
-<!--     <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=m-sjSfotYl50snQyr3CGg425urn1jBiFbwDdHdVh-Tg'></script> -->
-<!--     <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=m-sjSfotYl50snQyr3CGg425urn1jBiFbwDdHdVh-Tg'></script> -->
-<!--     <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=270&t=tt&d=m-sjSfotYl50snQyr3CGg425urn1jBiFbwDdHdVh-Tg'></script>     -->
-    <a href='https://clustrmaps.com/site/1bmrp'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=150&t=tt&d=m-sjSfotYl50snQyr3CGg425urn1jBiFbwDdHdVh-Tg&co=2f8cce&ct=ffffff'/></a>
-    
-  </body>
+  <!-- META DESCRIPTION: Brief page summary for search engines; Appears in search results to attract visitors -->
+  <meta name="description" content="Samarth Soni - Computer Science student at BITS Pilani specializing in AI, Machine Learning, and Deep Learning. Explore my research, projects, and experience.">
 
-  <footer>
-      <hr>
-      <code> Copyright (c) 2022 Samarth Soni </code>
+  <!-- META KEYWORDS: Helps search engines understand page content; Improves discoverability -->
+  <meta name="keywords" content="Samarth Soni, AI, Machine Learning, Deep Learning, Computer Science, BITS Pilani, Research, Portfolio">
+
+  <!-- AUTHOR META TAG: Identifies the page creator; Good practice for portfolio sites -->
+  <meta name="author" content="Samarth Soni">
+
+  <!-- ROBOTS META TAG: Controls search engine indexing; Currently set to noindex/nofollow to keep site private -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- OPEN GRAPH META TAGS: Control how page appears when shared on social media (Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Samarth Soni's Portfolio | AI & Machine Learning Researcher">
+  <meta property="og:description" content="Computer Science student at BITS Pilani specializing in AI, Machine Learning, and Deep Learning">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/Sunlight_pic.jpeg">
+
+  <!-- TWITTER CARD META TAGS: Optimizes appearance when shared on Twitter; Creates rich preview cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Samarth Soni's Portfolio">
+  <meta name="twitter:description" content="AI & Machine Learning Researcher | BITS Pilani">
+
+  <!-- FAVICON LINKS: Website icon that appears in browser tabs and bookmarks; Enhances brand recognition -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- STYLESHEET LINK: Connects to external CSS file; Separates styling from content for better organization -->
+  <link rel="stylesheet" href="css/master.css">
+
+  <!-- PRECONNECT TO EXTERNAL RESOURCES: Establishes early connection to ClustrMaps domain; Improves loading performance for analytics widget -->
+  <link rel="preconnect" href="https://clustrmaps.com">
+</head>
+
+<body>
+  <!-- BODY SECTION: Contains all visible content; Everything users see and interact with -->
+
+  <!-- NAVIGATION BAR: Sticky header navigation; Provides easy access to different sections and pages -->
+  <nav role="navigation" aria-label="Main navigation">
+    <!-- role and aria-label attributes; Improve accessibility for screen readers -->
+    <ul>
+      <!-- Unordered list for navigation items; Semantic choice for menu structure -->
+
+      <li><a href="#home" aria-label="Go to home section">Home</a></li>
+      <!-- Links to home section; aria-label provides context for screen readers -->
+
+      <li><a href="#about" aria-label="Go to about section">About</a></li>
+      <!-- Links to about section; Enables quick navigation to bio -->
+
+      <li><a href="#credentials" aria-label="Go to credentials section">Credentials</a></li>
+      <!-- Links to credentials section; Quick access to portfolio links -->
+
+      <li><a href="#contact" aria-label="Go to contact section">Contact</a></li>
+      <!-- Links to contact section; Easy way to reach contact information -->
+
+      <li><a href="resume.html" aria-label="View detailed resume">Resume</a></li>
+      <!-- Links to separate resume page; Provides access to detailed CV -->
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT CONTAINER: Semantic HTML5 element for primary page content; Helps accessibility and SEO -->
+  <main role="main">
+
+    <!-- HOME/HERO SECTION: First impression and main welcome; Creates immediate engagement -->
+    <section id="home" aria-labelledby="home-heading">
+      <!-- Section with id for anchor linking; aria-labelledby connects to heading for accessibility -->
+
+      <!-- PROFILE IMAGE: Circular profile photo; Creates personal connection and visual focal point -->
+      <img
+        src="images/Sunlight_pic.jpeg"
+        alt="Samarth Soni - Professional headshot"
+        class="center-image rounded-circle"
+        width="200"
+        height="200"
+        loading="eager">
+      <!-- src: Image file path; Displays the photo -->
+      <!-- alt: Descriptive text for screen readers and when image fails to load; Critical for accessibility -->
+      <!-- class: CSS classes for styling; 'center-image' centers it, 'rounded-circle' makes it circular -->
+      <!-- width/height: Explicit dimensions; Prevents layout shift during page load -->
+      <!-- loading="eager": Prioritize loading this image; Ensures profile photo appears immediately -->
+
+      <!-- MAIN HEADING: Primary page title; Most important heading for SEO and accessibility -->
+      <h1 id="home-heading">Greetings! Welcome to Samarth Soni's Portal</h1>
+      <!-- id connects to aria-labelledby; Creates accessible section label -->
+    </section>
+
+    <!-- ABOUT SECTION: Personal introduction and background; Tells visitor who you are -->
+    <section id="about" class="card" aria-labelledby="about-heading">
+      <!-- class="card": Applies card styling from CSS; Creates visual container with shadow and spacing -->
+
+      <h2 id="about-heading">About Me</h2>
+      <!-- Section heading with decorative underline from CSS; Creates visual hierarchy -->
+
+      <!-- PARAGRAPHS: Bio content with proper line height for readability -->
+      <p style="line-height: 1.3">
+        <!-- Inline style for custom line height; Provides slightly tighter spacing for this intro paragraph -->
+        I'm a computer science student at
+        <a href="https://www.bits-pilani.ac.in/" target="_blank" rel="noopener noreferrer" aria-label="Visit BITS Pilani website">BITS Pilani, India</a>.
+        <!-- External link with target="_blank" opens in new tab; rel="noopener noreferrer" prevents security vulnerabilities -->
+      </p>
+
+      <p>
+        I have experience with Python/Java programming, Machine Learning & Deep Learning, and am interested in the intersection of Artificial Intelligence and social good.
+        <!-- Describes technical skills and interests; Establishes expertise and values -->
+      </p>
+
+      <p>
+        A few years down the line, I envision myself working with multi-cultural teams for building Intelligent Systems of the future,<br>
+        <!-- <br> tag creates line break; Improves readability by separating long sentence -->
+        which hold the potential to automate every aspect of human life and solve many of the problems our global society faces today.
+        <!-- Vision statement; Communicates long-term goals and aspirations -->
+      </p>
+
+      <p>
+        Presently, I am actively pursuing Research and Higher Studies in AI to become conversant with the vast field.
+        <!-- Current focus statement; Shows active engagement and commitment to field -->
+      </p>
+    </section>
+
+    <!-- CREDENTIALS & PORTFOLIO SECTION: Links to external profiles and detailed resume -->
+    <section id="credentials" class="card" aria-labelledby="credentials-heading">
+      <h2 id="credentials-heading">Credentials and Portfolio</h2>
+
+      <!-- RESUME LINK: Primary call-to-action for detailed experience -->
+      <p>
+        <a href="resume.html" class="btn" aria-label="View my detailed experience in ML and AI">My Experience in ML/AI</a>
+        <!-- class="btn": Applies button styling from CSS; Creates prominent, clickable element -->
+      </p>
+
+      <!-- PROFESSIONAL PROFILES: Links to various professional platforms; Provides multiple ways to verify credentials -->
+      <p>
+        Checkout My:
+        <a href="https://github.com/samarthsoni17" target="_blank" rel="noopener noreferrer" aria-label="View my GitHub profile">GitHub</a>
+        <!-- GitHub: Shows code repositories and projects; Demonstrates technical skills -->
+        |
+        <a href="https://www.linkedin.com/in/samarth-soni-3372241ab/" target="_blank" rel="noopener noreferrer" aria-label="Connect with me on LinkedIn">LinkedIn</a>
+        <!-- LinkedIn: Professional networking profile; Shows career history and connections -->
+        |
+        <a href="https://scholar.google.com/citations?user=SlFhnVcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="View my publications on Google Scholar">Google Scholar</a>
+        <!-- Google Scholar: Academic publications; Demonstrates research contributions -->
+        |
+        <a href="https://www.researchgate.net/profile/Samarth-Soni-2" target="_blank" rel="noopener noreferrer" aria-label="View my research on ResearchGate">ResearchGate</a>
+        <!-- ResearchGate: Research papers and collaboration; Shows academic engagement -->
+      </p>
+    </section>
+
+    <!-- CONTACT SECTION: Contact information; Enables visitors to reach out -->
+    <section id="contact" class="card" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+
+      <!-- EMAIL ADDRESSES: Multiple email options for different contexts -->
+      <p>
+        <strong>Email:</strong>
+        <!-- <strong> tag: Makes "Email:" label bold; Creates visual emphasis -->
+        <a href="mailto:samarthsoni1@gmail.com" aria-label="Send email to personal Gmail">samarthsoni1@gmail.com</a>
+        <!-- mailto: link opens default email client; Simplifies contacting process -->
+        |
+        <a href="mailto:f20191274@hyderabad.bits-pilani.ac.in" aria-label="Send email to university address">f20191274@hyderabad.bits-pilani.ac.in</a>
+        <!-- University email; Provides professional institutional contact -->
+      </p>
+
+      <!-- PHONE NUMBER: Direct contact option with tel: protocol for mobile devices -->
+      <p>
+        <strong>Phone:</strong>
+        <a href="tel:+919969710871" aria-label="Call or text at +91 9969 710 871">+91 9969 710 871</a>
+        <!-- tel: link enables one-click calling on mobile; Improves mobile user experience -->
+      </p>
+    </section>
+
+    <!-- VISITOR ANALYTICS SECTION: ClustrMaps widget showing visitor locations -->
+    <section id="analytics" aria-label="Visitor analytics widget">
+      <!-- Simple widget to track site visitors; Creates visual interest and shows site reach -->
+      <a href='https://clustrmaps.com/site/1bmrp' title='Visit tracker' target="_blank" rel="noopener noreferrer">
+        <!-- Wraps widget in link to ClustrMaps; Allows visitors to see detailed stats -->
+        <img
+          src='//clustrmaps.com/map_v2.png?cl=ffffff&w=150&t=tt&d=m-sjSfotYl50snQyr3CGg425urn1jBiFbwDdHdVh-Tg&co=2f8cce&ct=ffffff'
+          alt="Visitor map showing site traffic locations"
+          loading="lazy">
+        <!-- Protocol-relative URL (//): Works with both HTTP and HTTPS; Prevents security warnings -->
+        <!-- loading="lazy": Defers loading until near viewport; Improves initial page load performance -->
+        <!-- URL parameters: cl=background, w=width, t=type, d=data key, co=color, ct=text color -->
+      </a>
+    </section>
+
+    <!-- COMMENTED OUT CODE: Previous ClustrMaps implementations kept for reference -->
+    <!-- Keeping old code commented allows easy reversion if needed; Good practice during development -->
+    <!--
+    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=n&d=m-sjSfotYl50snQyr3CGg425urn1jBiFbwDdHdVh-Tg'></script>
+    First version: Auto width, no title
+
+    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=m-sjSfotYl50snQyr3CGg425urn1jBiFbwDdHdVh-Tg'></script>
+    Second version: Auto width, with title
+
+    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=270&t=tt&d=m-sjSfotYl50snQyr3CGg425urn1jBiFbwDdHdVh-Tg'></script>
+    Third version: Fixed 270px width, with title
+
+    Switched to image-based widget for better performance and control
+    -->
+
+  </main>
+  <!-- End of main content area -->
+
+  <!-- FOOTER: Copyright and legal information; Standard practice for all websites -->
+  <footer role="contentinfo">
+    <!-- role="contentinfo": Identifies footer landmark; Helps screen readers navigate -->
+
+    <hr>
+    <!-- Horizontal rule creates visual separator; Defined in CSS with gradient effect -->
+
+    <code>Copyright © 2022-2025 Samarth Soni. All rights reserved.</code>
+    <!-- <code> tag: Monospace font appropriate for copyright; Creates distinctive appearance -->
+    <!-- Updated year range to include current year; Keeps copyright current -->
   </footer>
 
+  <!-- JAVASCRIPT FILE: External script for interactivity; Loaded at end to not block page rendering -->
+  <script src="js/main.js" defer></script>
+  <!-- defer attribute: Script executes after HTML parsing completes; Improves page load performance -->
+  <!-- We'll create this file next to add interactive features like smooth scrolling, animations, etc. -->
+
+</body>
+<!-- End of visible content -->
+
 </html>
+<!-- End of HTML document -->

@@ -1,157 +1,410 @@
-<!doctype html>
-
-<!-- this is a comment for human! -->
+<!DOCTYPE html>
+<!-- Document type declaration; Tells browser this is an HTML5 document for proper rendering -->
 
 <html lang="en">
+<!-- Root HTML element with language attribute; Helps screen readers and search engines understand content language -->
 
-  <header>
-    <title>Samarth Soni's Curriculum Vitae</title>
-    <link rel = "stylesheet" href = "css/master.css">
-    <link rel = "FaviconIcon" href = "favicon.ico" type = "image/x-icon">
-    <link rel = "shortcut" href = "favicon.ico" type = "image/x-icon">
-    <meta name = "viewport" content = "width=device-width, initial-scale = 1, shrink-to-fit=no">
-    <meta name = "name" content = "Samarth Soni's Portal">
-    <meta name = "robots" content = "noindex, nofollow">
-  </header>
+<head>
+  <!-- HEAD SECTION: Contains metadata and resources; Not visible to users but critical for functionality -->
 
-  <body>
+  <!-- CHARACTER ENCODING: UTF-8 supports all international characters; Essential for displaying special characters correctly -->
+  <meta charset="UTF-8">
+
+  <!-- VIEWPORT META TAG: Controls responsive behavior on mobile devices; Ensures proper scaling and prevents horizontal scrolling -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+  <!-- PAGE TITLE: Appears in browser tab and search results; Specific to CV page -->
+  <title>Samarth Soni's Curriculum Vitae | Resume & Experience</title>
+
+  <!-- META DESCRIPTION: Brief page summary for search engines; Describes CV content -->
+  <meta name="description" content="Detailed curriculum vitae of Samarth Soni - Research experience in Machine Learning, AI, Computer Vision, NLP, and professional projects">
+
+  <!-- META KEYWORDS: Helps search engines understand page content; Focused on CV keywords -->
+  <meta name="keywords" content="Samarth Soni, Resume, CV, Machine Learning Research, AI Experience, BITS Pilani, Projects, Publications">
+
+  <!-- AUTHOR META TAG: Identifies the page creator; Good practice for portfolio sites -->
+  <meta name="author" content="Samarth Soni">
+
+  <!-- ROBOTS META TAG: Controls search engine indexing; Currently set to noindex/nofollow to keep site private -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- OPEN GRAPH META TAGS: Control how page appears when shared on social media -->
+  <meta property="og:title" content="Samarth Soni's Curriculum Vitae">
+  <meta property="og:description" content="Research experience in ML, AI, Computer Vision, and NLP">
+  <meta property="og:type" content="profile">
+  <meta property="og:image" content="images/IMG_0021%20(1).jpg">
+
+  <!-- TWITTER CARD META TAGS: Optimizes appearance when shared on Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Samarth Soni's CV">
+  <meta name="twitter:description" content="Machine Learning & AI Researcher | BITS Pilani">
+
+  <!-- FAVICON LINKS: Website icon that appears in browser tabs and bookmarks; Consistent branding across pages -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- STYLESHEET LINK: Connects to external CSS file; Shares styling with index.html for consistency -->
+  <link rel="stylesheet" href="css/master.css">
+</head>
+
+<body>
+  <!-- BODY SECTION: Contains all visible content; Everything users see and interact with -->
+
+  <!-- NAVIGATION BAR: Consistent navigation across pages; Enables easy movement between pages -->
+  <nav role="navigation" aria-label="Main navigation">
+    <!-- role and aria-label attributes; Improve accessibility for screen readers -->
+    <ul>
+      <!-- Unordered list for navigation items; Semantic choice for menu structure -->
+
+      <li><a href="index.html" aria-label="Go to home page">Home</a></li>
+      <!-- Links back to home page; Provides easy return to main portal -->
+
+      <li><a href="index.html#about" aria-label="Go to about section">About</a></li>
+      <!-- Links to about section on home page; Enables quick access to bio -->
+
+      <li><a href="index.html#credentials" aria-label="Go to credentials section">Credentials</a></li>
+      <!-- Links to credentials section on home page; Quick access to portfolio links -->
+
+      <li><a href="index.html#contact" aria-label="Go to contact section">Contact</a></li>
+      <!-- Links to contact section on home page; Easy way to reach contact information -->
+
+      <li><a href="resume.html" aria-label="View detailed resume" class="active">Resume</a></li>
+      <!-- Current page indicator; Shows user where they are in navigation -->
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT CONTAINER: Semantic HTML5 element for primary page content; Helps accessibility and SEO -->
+  <main role="main">
+
+    <!-- HEADER SECTION: CV header with photo and summary -->
+    <section id="cv-header" class="card" aria-labelledby="cv-heading">
+      <hr>
+      <!-- Top divider; Creates visual separation at page start -->
+
+      <!-- PROFESSIONAL HEADSHOT: Formal photo for CV; Creates professional first impression -->
+      <img
+        src="images/IMG_0021%20(1).jpg"
+        alt="Samarth Soni - Professional headshot for curriculum vitae"
+        width="15%"
+        loading="eager">
+      <!-- src: Image file path with URL encoding for space in filename; Displays the photo -->
+      <!-- alt: Descriptive text for screen readers and accessibility; Explains image context -->
+      <!-- width="15%": Responsive sizing as percentage; Scales with screen size -->
+      <!-- loading="eager": Prioritize loading this image; Ensures headshot appears immediately -->
+
+      <!-- MAIN CV HEADING: Primary title for CV page; Establishes page purpose -->
+      <h1 id="cv-heading">Samarth Soni's Curriculum Vitae</h1>
+
+      <!-- QUICK SUMMARY: Key credentials and skills at a glance; Provides immediate context -->
+      <h4>Junior Year B.E. Computer Science Engineering | Cumulative GPA: 8.40</h4>
+      <!-- Academic status and performance; Shows current position and achievement level -->
+
+      <h4>Programming: Python, Java, C/C++, Basic Web Development</h4>
+      <!-- Technical skills summary; Lists core programming competencies -->
+
+      <h4>ML/AI Tools: TensorFlow, Matplotlib, Scikit-learn, SQL</h4>
+      <!-- Specialized tool proficiency; Demonstrates practical ML/AI capabilities -->
+    </section>
+
+    <!-- COMMENTED OUT CODE: Old contact info and education sections kept for reference -->
+    <!-- Preserving historical structure allows easy restoration if needed -->
+    <!--
+    <p>Email: <a href="mailto:s.soni87@yahoo.com" target="_blank">s.soni87@yahoo.com</a></p>
+    Old email address - no longer in use
+
+    <h2>Portfolio</h2>
+    <h3>GitHub: <a href="https://github.com/RickDiesel17" target="_blank">https://github.com/RickDiesel17</a></h3>
+    Old GitHub username - updated on home page with current username
+
+    <h2>Education</h2>
+    <h3>BITS Pilani, Hyderabad, India</h3>
+    <h4>B.E. Computer Science</h4>
+    Education details moved to header summary for better organization
+    -->
+
+    <!-- RESEARCH EXPERIENCES SECTION: Core of academic CV; Demonstrates research capabilities -->
+    <section id="research" aria-labelledby="research-heading">
+      <h2 id="research-heading">Research Experiences</h2>
+      <!-- Major section heading; Organizes CV into logical blocks -->
+
+      <!-- RESEARCH PROJECT 1: Machine Vision for Quality Assurance -->
+      <article class="card" aria-labelledby="research-1-title">
+        <!-- article element: Semantically represents independent content item; Each research project is self-contained -->
+        <!-- class="card": Applies card styling for visual separation; Creates distinct container for each project -->
+
+        <h3 id="research-1-title">Machine Vision-Based Adaptive Quality Assurance Systems</h3>
+        <!-- Project title; Clearly identifies research focus -->
+
+        <h4></h4>
+        <!-- Empty h4 placeholder; Maintains consistent spacing from CSS styling -->
+
+        <ul>
+          <!-- Unordered list for project details; Provides scannable bullet points -->
+
+          <li>Working on Machine Vision and Computer Vision applications for industrial quality control</li>
+          <!-- Describes research focus; Explains what technologies are being used -->
+
+          <li>Under Prof. Tathagata Ray [Jan 2022 - Present]</li>
+          <!-- Supervisor and timeline; Shows academic guidance and commitment duration -->
+        </ul>
+      </article>
+
+      <!-- RESEARCH PROJECT 2: Code Documentation and Summarization -->
+      <article class="card" aria-labelledby="research-2-title">
+        <h3 id="research-2-title">Code Commenting and Code Summarization</h3>
+        <!-- Project title; Focus on automated code documentation -->
+
+        <h4></h4>
+
+        <ul>
+          <li>Working on Literature Review of Automated Code Commenting techniques and methodologies</li>
+          <!-- Research activity; Shows engagement with existing academic work -->
+
+          <li>Under Prof. N L Bhanu Murthy [Jan 2022 - Present]</li>
+          <!-- Supervisor and timeline; Academic mentorship details -->
+        </ul>
+      </article>
+
+      <!-- RESEARCH PROJECT 3: Natural Language Processing for Indian Languages -->
+      <article class="card" aria-labelledby="research-3-title">
+        <h3 id="research-3-title">Sentiment Analysis of Indian Languages (Hindi; Devanagari Script)</h3>
+        <!-- Project title; NLP focus on underrepresented languages -->
+
+        <h4></h4>
+
+        <ul>
+          <li>Working on Sarcasm Detection and Sentiment Analysis of the Hindi Language using Deep Learning</li>
+          <!-- Research objective; Combines NLP with cultural language understanding -->
+
+          <li>Under Prof. Aruna Malapati, Prof. Surender S Samant [Feb 2022 - Present]</li>
+          <!-- Multiple supervisors; Shows collaborative research environment -->
+        </ul>
+      </article>
+
+      <!-- RESEARCH PROJECT 4: Social Network Analysis with ML -->
+      <article class="card" aria-labelledby="research-4-title">
+        <h3 id="research-4-title">Community Detection in Social Networks</h3>
+        <!-- Project title; Graph theory and ML intersection -->
+
+        <h4></h4>
+
+        <ul>
+          <li>Conducted a literature review of various Social Network Analysis methodologies</li>
+          <!-- Research foundation; Shows thorough background study -->
+
+          <li>Implemented and compared Classical Machine Learning and Quantum Machine Learning models on DBLP Dataset</li>
+          <!-- Implementation work; Demonstrates practical application and cutting-edge quantum ML exploration -->
+
+          <li>Presently writing a publication based on research findings</li>
+          <!-- Academic output; Shows progression toward scholarly contribution -->
+
+          <li>Worked under Prof. Subhrakanta Panda [Jan 2021 - Dec 2021]</li>
+          <!-- Supervisor and timeline; Completed project with defined timeframe -->
+        </ul>
+      </article>
+
+      <!-- RESEARCH PROJECT 5: Neuroscience and Deep Learning Intersection -->
+      <article class="card" aria-labelledby="research-5-title">
+        <h3 id="research-5-title">Applications of Neuroscience in Building Deep Learning Models</h3>
+        <!-- Project title; Interdisciplinary research combining neuroscience and AI -->
+
+        <h4></h4>
+
+        <ul>
+          <li>Conducted a literature review of Neuron Simulation using Artificial Neural Networks</li>
+          <!-- Research activity; Explores biological inspiration for AI -->
+
+          <li>Currently learning about Computational Neuroscience with aim to work on this further</li>
+          <!-- Ongoing development; Shows commitment to continued learning -->
+
+          <li>Worked under Prof. Venkatakrishnan Ramaswamy [Sept 2021 - Nov 2021]</li>
+          <!-- Supervisor and timeline; Short-term focused research period -->
+        </ul>
+      </article>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCES SECTION: Industry and practical work; Complements academic research -->
+    <section id="professional" aria-labelledby="professional-heading">
+      <h2 id="professional-heading">Professional Experiences</h2>
+      <!-- Major section heading; Separates professional from academic work -->
+
+      <!-- PROFESSIONAL EXPERIENCE 1: ML Apprenticeship -->
+      <article class="card" aria-labelledby="prof-1-title">
+        <h3 id="prof-1-title">Machine Learning Apprentice (Remote)</h3>
+        <!-- Position title; Indicates role and work arrangement -->
+
+        <h4>AlcoveX Business Advisory Ltd. [July 2021 - Present]</h4>
+        <!-- Company name and timeline; Shows professional affiliation and duration -->
+
+        <ul>
+          <li>Working with a team on Image/Video Classification and Sentiment Analysis projects</li>
+          <!-- Project work; Demonstrates collaborative skills and technical application -->
+
+          <li>Learning practical applications of Computer Vision and Natural Language Processing in business contexts</li>
+          <!-- Learning outcomes; Shows real-world application of academic knowledge -->
+        </ul>
+      </article>
+
+      <!-- PROFESSIONAL EXPERIENCE 2: Corporate Internship -->
+      <article class="card" aria-labelledby="prof-2-title">
+        <h3 id="prof-2-title">Summer Intern</h3>
+        <!-- Position title; Traditional internship role -->
+
+        <h4>National Stock Exchange of India Ltd. [June 2021 - July 2021]</h4>
+        <!-- Company name and timeline; Prestigious organization shows competitiveness -->
+
+        <ul>
+          <li>Worked with a team on Computer Networking infrastructure and protocols</li>
+          <!-- Project area; Demonstrates breadth beyond just ML/AI -->
+
+          <li>Implemented client-server communication using MQTT protocol in Node.js environment</li>
+          <!-- Technical implementation; Shows full-stack development capabilities -->
+
+          <li>Learned about Transport Layer protocols like TCP/IP and their real-world applications</li>
+          <!-- Learning outcomes; Demonstrates networking fundamentals knowledge -->
+        </ul>
+      </article>
+    </section>
+
+    <!-- PROJECTS SECTION: Independent and coursework projects; Shows practical application skills -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <!-- Major section heading; Organizes personal/academic projects -->
+
+      <!-- PROJECT 1: Reinforcement Learning Application -->
+      <article class="card" aria-labelledby="project-1-title">
+        <h3 id="project-1-title">Stock Market Prediction using Deep Reinforcement Learning</h3>
+        <!-- Project title; Combines RL with financial application -->
+
+        <h4></h4>
+
+        <ul>
+          <li>Used Deep Reinforcement Learning algorithms to predict trends from Yahoo Finance datasets</li>
+          <!-- Project objective; Shows application of advanced ML techniques -->
+
+          <li>Learned about Q-learning, Function Approximation, and temporal difference methods</li>
+          <!-- Technical learning; Demonstrates understanding of RL fundamentals -->
+
+          <li>Worked with a team of 4 people, coordinating development and experimentation</li>
+          <!-- Collaboration; Shows teamwork and project management skills -->
+        </ul>
+      </article>
+
+      <!-- PROJECT 2: Computer Vision Classification -->
+      <article class="card" aria-labelledby="project-2-title">
+        <h3 id="project-2-title">Classification of the Fashion MNIST Dataset</h3>
+        <!-- Project title; Standard benchmark dataset for image classification -->
+
+        <h4></h4>
+
+        <ul>
+          <li>Implemented various Deep Learning and Convolutional Neural Network architectures</li>
+          <!-- Implementation work; Shows hands-on experience with neural networks -->
+
+          <li>Learned about Deep Neural Networks, CNNs, pooling layers, and optimization techniques</li>
+          <!-- Technical learning; Demonstrates understanding of deep learning fundamentals -->
+
+          <li>Worked with a team of 4 people, dividing tasks and sharing insights</li>
+          <!-- Collaboration; Shows ability to work in team setting -->
+        </ul>
+      </article>
+
+      <!-- PROJECT 3: Data Science Fundamentals -->
+      <article class="card" aria-labelledby="project-3-title">
+        <h3 id="project-3-title">Data Science and Data Mining Assignments</h3>
+        <!-- Project title; Covers multiple data science techniques -->
+
+        <h4></h4>
+
+        <ul>
+          <li>Implemented Polynomial Regression, Gradient Descent optimization, and Greedy Feature Selection algorithms</li>
+          <!-- ML algorithms; Shows foundation in classical machine learning -->
+
+          <li>Implemented K-means clustering, Fuzzy C-means clustering, and Decision Tree splitting criteria</li>
+          <!-- Unsupervised and supervised learning; Demonstrates breadth of ML knowledge -->
+
+          <li>Learned about Regularization techniques, Data Mining principles, and visualization with Scikit-learn, Matplotlib, Jupyter Notebooks</li>
+          <!-- Tools and concepts; Shows practical data science toolkit proficiency -->
+
+          <li>Worked with a team of 3 people, collaborating on implementation and analysis</li>
+          <!-- Collaboration; Consistent team experience across projects -->
+        </ul>
+      </article>
+    </section>
+
+    <!-- COURSEWORK SECTION: Formal education details; Shows structured learning path -->
+    <section id="coursework" aria-labelledby="coursework-heading">
+      <h2 id="coursework-heading">Coursework</h2>
+      <!-- Major section heading; Organizes academic courses -->
+
+      <!-- CORE COURSES: University curriculum -->
+      <article class="card">
+        <h3>Core Courses - GPA: 9.25</h3>
+        <!-- Subsection with exceptional GPA; Highlights academic excellence in major courses -->
+
+        <h4></h4>
+
+        <ul>
+          <!-- List of completed courses; Demonstrates comprehensive CS/AI education -->
+          <li>Deep Learning - Advanced neural network architectures and training techniques</li>
+          <li>Artificial Intelligence - Search algorithms, knowledge representation, reasoning</li>
+          <li>Computational Neuroscience - Brain-inspired computing and neural modeling</li>
+          <li>Reinforcement Learning - Markov Decision Processes, policy optimization, Q-learning</li>
+          <li>Data Mining - Pattern discovery, association rules, clustering techniques</li>
+          <li>Data Science - Statistical analysis, data visualization, predictive modeling</li>
+          <li>Database Systems - SQL, NoSQL, transaction management, query optimization</li>
+          <li>Data Structures and Algorithms - Fundamental CS concepts, complexity analysis</li>
+          <!-- Each course listed with brief description; Shows depth of knowledge in each area -->
+
+          <!-- SELF-TAUGHT COURSES: Independent learning demonstrates motivation and initiative -->
+          <h3>Self-Motivated Learning</h3>
+          <!-- Subsection for MOOCs and online courses; Shows proactive learning attitude -->
+
+          <h4></h4>
+
+          <li>Machine Learning (Andrew Ng) - Classic Stanford course covering ML fundamentals</li>
+          <!-- Most recognized ML course worldwide; Shows solid foundation -->
+
+          <li>Natural Language Processing with Deep Learning (Stanford CS224N) - Advanced NLP techniques</li>
+          <!-- Prestigious Stanford course; Demonstrates commitment to NLP specialization -->
+
+          <li>Computer Vision (Stanford CS231N) - Convolutional networks and visual recognition</li>
+          <!-- Another Stanford course; Shows interest in CV applications -->
+
+          <li>Synapses, Neurons & Brains (University of Jerusalem) - Neuroscience fundamentals</li>
+          <!-- Interdisciplinary course; Connects biology with AI -->
+
+          <li>Python Data Structures (University of Michigan) - Programming fundamentals</li>
+          <!-- Foundation course; Demonstrates comprehensive learning from basics -->
+        </ul>
+      </article>
+    </section>
+
+  </main>
+  <!-- End of main content area -->
+
+  <!-- FOOTER: Navigation back to home and copyright; Provides way to return to main portal -->
+  <footer role="contentinfo">
+    <!-- role="contentinfo": Identifies footer landmark; Helps screen readers navigate -->
+
     <hr>
+    <!-- Horizontal rule creates visual separator; Defined in CSS with gradient effect -->
 
-    <img src="images/IMG_0021%20(1).jpg" alt="Samarth Soni's headshot" width="15%">
+    <p>
+      <a href="index.html" aria-label="Return to homepage">← Back to Homepage</a>
+      <!-- Back link with left arrow; Intuitive navigation to return to main page -->
+    </p>
 
-    <h1>Samarth Soni's Curriculum Vitae</h1>
-    <h4>Junior Year B.E. Computer Science Engineering; Cumulative GPA: 8.40</h4>
-    <h4> I know Python, Java, C/C++, Basic Web Dev</h4>
-    <h4> I can implement Tensorflow, Matplotlib and Scikit Functions in Python, and SQL queries. </h4>
-
-
-<!--    <p>Email: <a href="mailto:s.soni87@yahoo.com" target="_blank">s.soni87@yahoo.com</a></p>-->
-<!--    &lt;!&ndash; don't post physical address, personal phone number or other personal information on the web! &ndash;&gt;-->
-
-<!--    <h2>Portfolio</h2>-->
-<!--      <h3>GitHub: <a href="https://github.com/RickDiesel17" target="_blank">https://github.com/RickDiesel17</a></h3>-->
-
-<!--    <h2>Education</h2>-->
-
-<!--    <h3>BITS Pilani, Hyderabad, India</h3>-->
-<!--    <h4>B.E. Computer Science</h4>-->
-
-    <h2>Research Experiences</h2>
-
-    <h3> Machine Vision-Based Adaptive Quality Assurance Systems </h3>
-    <h4> </h4>
-      <ul>
-        <li> Working on Machine Vision and Computer Vision </li>
-        <li> Under Prof. Tathagata Ray [Jan 2022 - Present] </li>
-      </ul>
-
-    <h3> Code Commenting and Code Summarization </h3>
-    <h4> </h4>
-    <ul>
-      <li> Working on Literature Review of Automated Code Commenting</li>
-              <li> Under Prof. N L Bhanu Murthy [Jan 2022 - Present] </li>
-    </ul>
-
-    <h3> Sentiment Analysis of Indian Languages (Hindi; Devanagri Script) </h3>
-    <h4> </h4>
-    <ul>
-      <li> Working on Sarcasm Detection and Sentiment Analysis of the Hindi Language </li>
-              <li> Under Prof. Aruna Malapati, Prof. Surender S Samant [Feb 2022 - Present] </li>
-    </ul>
-
-    <h3> Community Detection in Social Networks </h3>
-    <h4> </h4>
-    <ul>
-      <li> Conducted a literature review of various SNA methodologies </li>
-      <li> Implemented and compared ML and Quantum ML models on DBLP Dataset </li>
-              <li> Presently writing a publication </li>
-      <li> Worked under Prof. Subhrakanta Panda [Jan 2021 - Dec 2021] </li>
-    </ul>
-
-    <h3> Applications of Neuroscience in building Deep Learning Models </h3>
-    <h4>  </h4>
-    <ul>
-      <li> Conducted a literature review of Neuron Simulation using ANNs </li>
-              <li> Currently learning about Computational Neuroscience with aim to work on ths further </li>
-      <li> Worked under Prof. Venkatakrishnan Ramaswamy [Sept 2021 - Nov 2021] </li>
-    </ul>
-
-
-    <h2>Professional Experiences</h2>
-
-    <h3> Machine Learning Apprentice (remote) </h3>
-<!--    <h4> AlcoveX Business Advisory Ltd.; Vishakhapatnam, India </h4>-->
-    <h4> AlcoveX Business Advisory Ltd. [July 2021 - Present] </h4>
-    <ul>
-      <li> Working with a team on Image/Video Classification, Sentiment Analysis </li>
-      <li> Learning practical applications of Computer Vision and NLP </li>
-    </ul>
-
-    <h3> Summer Intern </h3>
-<!--    <h4> National Stock Exchange of India Ltd. </h4>-->
-    <h4> National Stock Exchange of India Ltd. [June 2021 - July 2021] </h4>
-    <ul>
-      <li> Worked with a team on Computer Networking </li>
-      <li> Implemented client-server communication using MQTT in Node.js </li>
-      <li> Learnt about Transport Layer protocols like TCP/IP </li>
-    </ul>
-
-    <h2>Projects</h2>
-
-    <h3> Stock Market Prediction </h3>
-    <h4>  </h4>
-    <ul>
-      <li> Used Deep Reinforcement Learning to predict Yahoo Finance datasets </li>
-      <li> Learnt about Q-learning, Functional Approximation </li>
-      <li> Worked with a team of 4 people </li>
-    </ul>
-
-    <h3> Classification of the Fashion MNIST dataset </h3>
-    <h4>  </h4>
-    <ul>
-      <li> Implemented various Deep Learning and Convolutional Architectures </li>
-      <li> Learnt about Deep NNs, CNNs </li>
-      <li> Worked with a team of 4 people </li>
-    </ul>
-
-    <h3> Data Science and Data Mining Assignments </h3>
-    <h4>  </h4>
-    <ul>
-      <li> Implemented Polynomial Regression, Gradient Descent, Greedy Feature Selection </li>
-      <li> Implemented K-means/fuzzy C-means clustering; Decision Tree Split </li>
-      <li> Learnt about Regularization, Data Mining, Scikit, Matplotlib, IPYNB </li>
-      <li> Worked with a team of 3 people </li>
-    </ul>
-
-    <h2>Coursework</h2>
-
-    <h3> GPA in core courses - 9.25 </h3>
-    <h4> </h4>
-    <ul>
-      <li> Deep Learning </li>
-      <li> Artificial Intelligence </li>
-      <li> Computational Neuroscience </li>
-      <li> Reinforcement Learning </li>
-      <li> Data Mining </li>
-      <li> Data Science </li>
-      <li> Database Systems </li>
-      <li> Data Structures and Algorithms </li>
-
-      <h3> Self Motivated </h3>
-      <h4> </h4>
-      <li> Machine Learning (Andrew Ng) </li>
-      <li> NLP with Deep Learning (Stanford CS224N) </li>
-      <li> Computer Vision (Stanford CS231N) </li>
-      <li> Synapses, Neurons & Brains (Uni. of Jerusalem) </li>
-      <li> Python Data Structures (UMich) </li>
-
-    </ul>
-
-  </body>
-
-  <footer>
-  <hr>
-  <p><a href="index.html">Back to homepage</a><p>
+    <code>Copyright © 2022-2025 Samarth Soni. All rights reserved.</code>
+    <!-- <code> tag: Monospace font appropriate for copyright; Creates distinctive appearance -->
   </footer>
 
+  <!-- JAVASCRIPT FILE: External script for interactivity; Shared with index.html -->
+  <script src="js/main.js" defer></script>
+  <!-- defer attribute: Script executes after HTML parsing completes; Improves page load performance -->
+
+</body>
+<!-- End of visible content -->
+
 </html>
+<!-- End of HTML document -->
